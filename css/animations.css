@@ -1,0 +1,95 @@
+/* =========================================
+   ADVANCED ANIMATIONS
+========================================= */
+
+
+.scroll-hidden {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.scroll-show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* HERO FLOATING */
+
+.floating-card {
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+
+.card-two {
+
+    animation-delay:
+        1.5s;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px);
+
+    }
+
+}
+
+
+/* BUTTON GLOW */
+
+.btn-primary:hover {
+
+    box-shadow:
+        0 15px 40px
+        rgba(108,99,255,0.35);
+}
+
+
+/* CARD HOVER */
+
+.skill-card,
+.service-card,
+.project-card,
+.certificate-card {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.skill-card:hover,
+.service-card:hover,
+.project-card:hover,
+.certificate-card:hover {
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.12);
+}

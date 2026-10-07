@@ -1,0 +1,192 @@
+@media (max-width: 1000px) {
+
+    .navbar {
+
+        position: absolute;
+
+        top: 80px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: var(--background);
+
+        border-bottom:
+            1px solid var(--border);
+
+        flex-direction: column;
+
+        display: none;
+    }
+
+
+    .navbar.active {
+        display: flex;
+    }
+
+
+    .menu-button {
+        display: block;
+    }
+
+
+    .hero-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+
+    .about-grid,
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .certificates-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+
+        padding: 70px 0;
+    }
+
+
+    .hero-title {
+
+        font-size: 3rem;
+    }
+
+
+    .hero-image-card {
+
+        width: 260px;
+
+        height: 260px;
+    }
+
+
+    .hero-image-glow {
+
+        width: 300px;
+
+        height: 300px;
+    }
+
+
+    .skills-grid,
+    .services-grid,
+    .projects-grid,
+    .certificates-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-info {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .footer-links {
+
+        justify-content: center;
+    }
+}
+@media (max-width: 700px) {
+
+    .timeline::before {
+
+        left: 10px;
+
+        transform: none;
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+
+        width: 100%;
+
+        left: 0;
+
+        padding:
+            20px 0 20px 40px;
+
+        text-align: left;
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-dot,
+    .timeline-item:nth-child(even)
+    .timeline-dot {
+
+        left: 1px;
+
+        right: auto;
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-tags {
+
+        justify-content: flex-start;
+    }
+
+}
