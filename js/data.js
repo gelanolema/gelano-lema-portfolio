@@ -1,4 +1,4 @@
-```javascript
+
 /* =========================================
    GELANO LEMA PORTFOLIO
    PORTFOLIO DATA
