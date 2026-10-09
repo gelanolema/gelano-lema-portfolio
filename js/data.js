@@ -48,10 +48,10 @@ const projectsData = [
             "assets/images/projects/student-management.jpg",
 
         github:
-            "#",
+    "https://github.com/gelanolema/bule-hora-student-management-system",
 
-        demo:
-            "#",
+demo:
+    "https://gelanolema.rf.gd",
 
         year: "2026",
 
