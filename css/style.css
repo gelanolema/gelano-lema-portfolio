@@ -2297,8 +2297,6 @@ textarea {
         letter-spacing: 1px;
     }
 }
-
-```css
 /* =====================================
    PREMIUM EDUCATION SECTION
 ===================================== */
@@ -2878,7 +2876,6 @@ textarea {
     grid-template-columns: 2fr 1fr !important;
     gap: 25px !important;
 }
-   ```css
 /* ===== Education Section Quick Fix ===== */
 
 .education {
