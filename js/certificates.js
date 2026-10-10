@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("certificates-container");
 
     if (!container) {
@@ -8,69 +8,76 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (typeof certificatesData === "undefined" || !Array.isArray(certificatesData)) {
-        container.innerHTML = "<p>Certificates data could not be loaded.</p>";
         console.error("certificatesData is missing. Check js/data.js.");
+        container.textContent = "Certificates could not be loaded.";
         return;
     }
 
-    container.innerHTML = certificatesData.map(certificate => `
-        <article class="certificate-card">
-            <div class="certificate-image-wrapper">
-                <img
-                    class="certificate-image"
-                    src="${certificate.image}"
-                    alt="${certificate.title}"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
-                >
-                <div class="certificate-placeholder" hidden>🏆</div>
-            </div>
+    certificatesData.forEach(function (certificate) {
+        const card = document.createElement("article");
+        card.className = "certificate-card";
 
-            <div class="certificate-content">
-                <span class="certificate-year">${certificate.date || certificate.year || ""}</span>
-                <h3>${certificate.title}</h3>
-                <h4>${certificate.issuer}</h4>
-                <p>${certificate.description}</p>
-                <button class="certificate-view-btn" type="button">View Certificate →</button>
-            </div>
-        </article>
-    ).join("");
+        const image = document.createElement("img");
+        image.className = "certificate-image";
+        image.src = certificate.image;
+        image.alt = certificate.title;
+        image.loading = "lazy";
 
-    container.querySelectorAll(".certificate-view-btn").forEach((button, index) => {
-        button.addEventListener("click", () => {
-            const certificate = certificatesData[index];
+        image.onerror = function () {
+            image.alt = "Certificate image could not be loaded";
+        };
+
+        const content = document.createElement("div");
+        content.className = "certificate-content";
+
+        const date = document.createElement("span");
+        date.className = "certificate-year";
+        date.textContent = certificate.date || certificate.year || "";
+
+        const title = document.createElement("h3");
+        title.textContent = certificate.title;
+
+        const issuer = document.createElement("h4");
+        issuer.textContent = certificate.issuer;
+
+        const description = document.createElement("p");
+        description.textContent = certificate.description;
+
+        const button = document.createElement("button");
+        button.className = "certificate-view-btn";
+        button.type = "button";
+        button.textContent = "View Certificate";
+
+        button.addEventListener("click", function () {
             const modal = document.createElement("div");
             modal.className = "certificate-modal";
 
-            modal.innerHTML = `
-                <div class="certificate-modal-overlay">
-                    <div class="certificate-modal-content">
-                        <button class="certificate-close" type="button" aria-label="Close">×</button>
-                        <img src="${certificate.image}" alt="${certificate.title}">
-                        <div class="certificate-modal-info">
-                            <h2>${certificate.title}</h2>
-                            <h4>${certificate.issuer}</h4>
-                            <p>${certificate.description}</p>
-                            <span>${certificate.date || certificate.year || ""}</span>
-                        </div>
-                    </div>
-                </div>
-            ;
+            const preview = document.createElement("div");
+            preview.className = "certificate-modal-content";
 
+            const close = document.createElement("button");
+            close.className = "certificate-close";
+            close.type = "button";
+            close.textContent = "×";
+            close.addEventListener("click", function () {
+                modal.remove();
+            });
+
+            const largeImage = document.createElement("img");
+            largeImage.src = certificate.image;
+            largeImage.alt = certificate.title;
+
+            const heading = document.createElement("h2");
+            heading.textContent = certificate.title;
+
+            preview.append(close, largeImage, heading);
+            modal.appendChild(preview);
             document.body.appendChild(modal);
-
-            const closeModal = () => modal.remove();
-            modal.querySelector(".certificate-close").addEventListener("click", closeModal);
-            modal.querySelector(".certificate-modal-overlay").addEventListener("click", event => {
-                if (event.target === event.currentTarget) closeModal();
-            });
-            document.addEventListener("keydown", function handleEscape(event) {
-                if (event.key === "Escape" && document.body.contains(modal)) {
-                    closeModal();
-                    document.removeEventListener("keydown", handleEscape);
-                }
-            });
         });
+
+        content.append(date, title, issuer, description, button);
+        card.append(image, content);
+        container.appendChild(card);
     });
 
     console.log("Certificates rendered:", certificatesData.length);
