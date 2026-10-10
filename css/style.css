@@ -2968,4 +2968,21 @@ background:
         transform: none;
     }
 }
+.education {
+    background: #080d1b !important;
+    color: white !important;
+    padding: 80px 0 !important;
+}
 
+.education .education-card {
+    background: #141e34 !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+}
+
+.education .education-layout {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 25px !important;
+}
