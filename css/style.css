@@ -2156,8 +2156,6 @@ textarea {
         width: 100%;
     }
 }
-
-```css
 /* PREMIUM LOADER DESIGN */
 .page-loader {
     position: fixed;
@@ -2166,14 +2164,14 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-        radial-gradient(circle at top, #1e1b4b, transparent 55%),
-        linear-gradient(135deg, #050816, #0f172a, #020617);
-    color: white;
-    text-align: center;
-    transition: opacity .6s ease, visibility .6s ease;
-}
-
+ 
+background:
+    linear-gradient(
+        rgba(3, 8, 25, 0.35),
+        rgba(3, 8, 25, 0.55)
+    ),
+    url("images/portfolio-background.png")
+    center center / cover no-repeat;
 .page-loader.loader-hidden {
     opacity: 0;
     visibility: hidden;
