@@ -381,10 +381,8 @@ const certificatesData = [
         issuer: "Udacity",
         date: "April 20, 2025",
         image: "assets/images/certificates/programming-fundamentals.jpg",
-        description: "Verified certificate of Nanodegree program completion in Programming Fundamentals."
-    }
-    
-    ,
+                description: "Verified certificate of Nanodegree program completion in Programming Fundamentals."
+    },
     {
         id: 5,
         title: "Strategies for Successful Online Learning",
