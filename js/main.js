@@ -6,9 +6,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Gelano Lema Portfolio Started");
-
 /* =========================================
-   PAGE LOADER - PERCENTAGE ANIMATION
+   PAGE LOADER - FIXED VERSION
 ========================================= */
 
 const pageLoader = document.getElementById("page-loader");
@@ -16,36 +15,31 @@ const loaderNumber = document.getElementById("loader-number");
 const loaderProgressBar = document.getElementById("loader-progress-bar");
 
 if (pageLoader) {
-    window.addEventListener("load", () => {
+    let progress = 0;
 
-        let progress = 0;
+    const loadingInterval = setInterval(() => {
+        progress = Math.min(progress + 1, 100);
 
-        const loadingInterval = setInterval(() => {
-            progress += 1;
+        if (loaderNumber) {
+            loaderNumber.textContent = progress;
+        }
 
-            if (loaderNumber) {
-                loaderNumber.textContent = progress;
-            }
+        if (loaderProgressBar) {
+            loaderProgressBar.style.width = progress + "%";
+        }
 
-            if (loaderProgressBar) {
-                loaderProgressBar.style.width = progress + "%";
-            }
+        if (progress >= 100) {
+            clearInterval(loadingInterval);
 
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
+            setTimeout(() => {
+                pageLoader.classList.add("loader-hidden");
 
                 setTimeout(() => {
-                    pageLoader.classList.add("loader-hidden");
-
-                    setTimeout(() => {
-                        pageLoader.remove();
-                    }, 650);
-
-                }, 300);
-            }
-
-        }, 20);
-    });
+                    pageLoader.remove();
+                }, 650);
+            }, 300);
+        }
+    }, 30);
 }
 
 
