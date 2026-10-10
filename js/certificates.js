@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="certificate-view-btn" type="button">View Certificate →</button>
             </div>
         </article>
-    `).join("");
+    ).join("");
 
     container.querySelectorAll(".certificate-view-btn").forEach((button, index) => {
         button.addEventListener("click", () => {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                     </div>
                 </div>
-            `;
+            ;
 
             document.body.appendChild(modal);
 
