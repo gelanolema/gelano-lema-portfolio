@@ -7,26 +7,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Gelano Lema Portfolio Started");
 
+/* =========================================
+   PAGE LOADER - PERCENTAGE ANIMATION
+========================================= */
 
-    /* =========================================
-       PAGE LOADER
-    ========================================= */
+const pageLoader = document.getElementById("page-loader");
+const loaderNumber = document.getElementById("loader-number");
+const loaderProgressBar = document.getElementById("loader-progress-bar");
 
-    const pageLoader = document.getElementById("page-loader");
+if (pageLoader) {
+    window.addEventListener("load", () => {
 
-    if (pageLoader) {
+        let progress = 0;
 
-        window.addEventListener("load", () => {
+        const loadingInterval = setInterval(() => {
+            progress += 1;
 
-            setTimeout(() => {
+            if (loaderNumber) {
+                loaderNumber.textContent = progress;
+            }
 
-                pageLoader.classList.add("hidden");
+            if (loaderProgressBar) {
+                loaderProgressBar.style.width = progress + "%";
+            }
 
-            }, 500);
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
 
-        });
+                setTimeout(() => {
+                    pageLoader.classList.add("loader-hidden");
 
-    }
+                    setTimeout(() => {
+                        pageLoader.remove();
+                    }, 650);
+
+                }, 300);
+            }
+
+        }, 20);
+    });
+}
 
 
     /* =========================================
