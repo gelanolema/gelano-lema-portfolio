@@ -383,4 +383,23 @@ const certificatesData = [
         image: "assets/images/certificates/programming-fundamentals.jpg",
         description: "Verified certificate of Nanodegree program completion in Programming Fundamentals."
     }
+    
+    ,
+    {
+        id: 5,
+        title: "Strategies for Successful Online Learning",
+        issuer: "e-SHE",
+        date: "October 2024",
+        image: "assets/images/certificates/successful-online-learning.jpg",
+        description: "Certificate of achievement for completing the e-SHE course on strategies for successful online learning."
+    },
+    {
+        id: 6,
+        title: "How to Evaluate Resources",
+        issuer: "e-SHE",
+        date: "October 2024",
+        image: "assets/images/certificates/evaluate-resources.jpg",
+        description: "Certificate of achievement for completing the e-SHE course on evaluating online resources."
+    },
+
 ];
