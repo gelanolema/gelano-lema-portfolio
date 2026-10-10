@@ -350,8 +350,6 @@ const skillsData = [
 /* =========================================
    CERTIFICATES DATA
 ========================================= */
-
-javascript
 const certificatesData = [
     {
         id: 1,
