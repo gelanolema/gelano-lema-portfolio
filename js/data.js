@@ -351,56 +351,38 @@ const skillsData = [
    CERTIFICATES DATA
 ========================================= */
 
+javascript
 const certificatesData = [
-
     {
         id: 1,
-
-        title: "Software Engineering",
-
-        issuer: "Bule Hora University",
-
-        year: "2026",
-
-        description:
-            "Academic study and practical training in Software Engineering.",
-
-        image:
-            "assets/images/certificates/software-engineering.jpg"
+        title: "Keeping Yourself Safe Online",
+        issuer: "e-SHE",
+        date: "October 2024",
+        image: "assets/images/certificates/safe-online.jpg",
+        description: "Certificate of achievement for completing the e-SHE course on keeping yourself safe online."
     },
-
-
     {
         id: 2,
-
-        title: "Web Development",
-
-        issuer: "Academic / Online Training",
-
-        year: "2026",
-
-        description:
-            "Training and practical experience in modern web development.",
-
-        image:
-            "assets/images/certificates/web-development.jpg"
+        title: "Academic Integrity",
+        issuer: "e-SHE",
+        date: "October 2024",
+        image: "assets/images/certificates/academic-integrity.jpg",
+        description: "Certificate of achievement for completing the e-SHE course on academic integrity."
     },
-
-
     {
         id: 3,
-
-        title: "Programming & Database Development",
-
-        issuer: "Academic Project",
-
-        year: "2026",
-
-        description:
-            "Practical experience in programming and database development.",
-
-        image:
-            "assets/images/certificates/programming.jpg"
+        title: "How to Study Effectively",
+        issuer: "e-SHE",
+        date: "October 2024",
+        image: "assets/images/certificates/study-effectively.jpg",
+        description: "Certificate of achievement for completing the e-SHE course on effective study methods."
+    },
+    {
+        id: 4,
+        title: "Programming Fundamentals",
+        issuer: "Udacity",
+        date: "April 20, 2025",
+        image: "assets/images/certificates/programming-fundamentals.jpg",
+        description: "Verified certificate of Nanodegree program completion in Programming Fundamentals."
     }
-
 ];
