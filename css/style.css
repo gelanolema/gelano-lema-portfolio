@@ -1435,10 +1435,6 @@ textarea {
     }
 
 }
-```css
-/* =====================================
-   CONTACT SECTION - MODERN RESPONSIVE
-===================================== */
 
 .contact {
     position: relative;
@@ -1473,7 +1469,6 @@ textarea {
     margin: 0 auto;
 }
 
-/* Contact information cards */
 .contact .contact-info {
     display: grid;
     grid-template-columns: 1fr;
@@ -1591,8 +1586,6 @@ textarea {
     max-width: 100%;
     cursor: pointer;
 }
-
-/* Tablet */
 @media (max-width: 900px) {
     .contact {
         padding: 75px 18px;
@@ -1612,8 +1605,6 @@ textarea {
         padding: 20px;
     }
 }
-
-/* Mobile */
 @media (max-width: 560px) {
     .contact {
         padding: 60px 16px;
@@ -1656,8 +1647,6 @@ textarea {
         justify-content: center;
     }
 }
-
-/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
     .contact .contact-item,
     .contact .contact-item a {
@@ -1668,4 +1657,3 @@ textarea {
         transform: none;
     }
 }
-```
