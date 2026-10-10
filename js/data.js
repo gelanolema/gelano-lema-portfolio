@@ -400,6 +400,6 @@ const certificatesData = [
         date: "October 2024",
         image: "assets/images/certificates/evaluate-resources.jpg",
         description: "Certificate of achievement for completing the e-SHE course on evaluating online resources."
-    },
+    }
 
 ];
